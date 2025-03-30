@@ -41,7 +41,7 @@ Use `gcloud config set project [PROJECT_ID]` to change to a different project.
 rekaharisri@cloudshell:~ (healthcare-system-api)$ ``` gcloud auth application-default print-access-token ```
 
 rekaharisri@cloudshell:~ (healthcare-system-api)$ 
-![alt text](image-2.png)
+
 
 C:\Program Files (x86)\Google\Cloud SDK> ``` gcloud services enable healthcare.googleapis.com ```
 Operation "operations/acf.p2-1083335448446-9a636579-09c8-45fe-abe6-3ff947fe28c8" finished successfully.
@@ -58,13 +58,12 @@ ACTIVE  ACCOUNT rekaharisri@gmail.com
 To set the active account, run:                                            
  $ ``` gcloud config set account `ACCOUNT`  ```
 C:\Windows\System32> ``` gcloud auth application-default print-access-token  ```                                          
-![alt text](image-1.png)                                                                                                                         
+                                                                                                                         
 C:\Windows\System32> gcloud services enable 
 healthcare.googleapis.com                                                                                                         C:\Windows\System32>gcloud auth application-default login --scopes=https://www.googleapis.com/auth/cloud-platform                                                                              
 Your browser has been opened to visit:                                                                                                                                           Credentials saved to file: [C:\Users\nreka\AppData\Roaming\gcloud\application_default_credentials.json]                                                                                                      
 These credentials will be used by any library that requests Application Default Credentials Quota project "healthcare-system-api" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.                                                                                                                                        C:\Windows\System32> ``` gcloud auth application-default print-access-token   ```                                                                                                                      
   
-
 MVN TEST
 
 C:\Windows\System32> ``` gcloud healthcare datasets list --location=us-central1 --project=healthcare-system-api   ```  
