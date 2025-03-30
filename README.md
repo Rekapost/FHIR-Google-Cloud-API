@@ -1,0 +1,79 @@
+*** Creating and managing FHIR stores ***
+
+## FHIR versions DSTU2, STU3, and R4. 
+R4 (Release 4)
+Released: 2019
+
+### Purpose: R4 is the first "normative" release of FHIR, meaning it is a more stable version that is considered ready for widespread adoption in healthcare systems.
+
+### Characteristics:
+
+Introduced major improvements and additional resources like FHIR for clinical data exchange and clinical decision support.
+
+FHIR for mobile, web, and cloud-based apps with a focus on interoperability and integration with other healthcare systems.
+
+First version to be "normative": This means that the FHIR specifications in R4 are considered stable and will not change significantly, ensuring long-term compatibility.
+
+Added features for security, auditing, patient privacy, and data integrity.
+
+Backward Compatibility: R4 includes most features from STU3 and DSTU2 but with changes for better consistency and enhanced security.
+
+https://hl7.org/fhir/R4/
+
+### How to create, edit, view, list, and delete Fast Healthcare Interoperability Resources (FHIR) stores. FHIR stores hold FHIR resources, such as Claim resources, Patient resources, Medication resources, and more.
+
+C:\Program Files (x86)\Google\Cloud SDK>``` gcloud auth login ```
+Your browser has been opened to visit:
+
+C:\Program Files (x86)\Google\Cloud SDK>``` gcloud projects create healthcare-system-api ```
+Create in progress for [https://cloudresourcemanager.googleapis.com/v1/projects/healthcare-system-api].
+Waiting for [operations/create_project.global.7912408794300558084] to finish...done.
+Enabling service [cloudapis.googleapis.com] on project [healthcare-system-api]...
+Operation "operations/acat.p2-1083335448446-b043be43-e456-4dbb-b5ff-a83e6673d513" finished successfully.
+
+C:\Program Files (x86)\Google\Cloud SDK>``` gcloud config set project healthcare-system-api ```
+Updated property [core/project].
+
+## To get Access Token from Google Cloud: https://cloud.google.com/
+Welcome to Cloud Shell! Type "help" to get started.
+Your Cloud Platform project in this session is set to healthcare-system-api.
+Use `gcloud config set project [PROJECT_ID]` to change to a different project.
+rekaharisri@cloudshell:~ (healthcare-system-api)$ ``` gcloud auth application-default print-access-token ```
+ya29.a0AeXRPp5pSqxgOEevFfHlkrSQSu_S6KAVbE7W6RrOZg9wRZAiCeRMTKf4cAm3atSjkWP39vQKpGG_v0KlojWThkwFAmrjcslb-Uaw6-bC-AyLDsFmhySK8Ne3atE9sGMN8aHTbsl4rXaFCG_PSvWeZFl1e7DLL1PZSoylu-o8hCqt4VphGwMKrgwmvG4BSIHFanDa9MFfqWql4Ga-OUs8KS5iABes5cG9weIQQHqRWDDQoLt4yLDxjWOEEttInSsU7Ehv1hBqacr6mZ1in7b9m5nZhbLauTJAI2GGu9iqy050jGoMJVonossnKvSyex2kcDWzY39zWEYLZQqwegdcsr-EnfU0fgwBUCR477Cizr1xe0js4DdhP81glNk17RbI7Gt2LXYPiGonxMhemj54LN7ZgeXKmlfD1R55aCgYKAUASARASFQHGX2MifY6YSRnxOtLqgik_CAu-WQ0427
+rekaharisri@cloudshell:~ (healthcare-system-api)$ 
+![alt text](image-2.png)
+
+C:\Program Files (x86)\Google\Cloud SDK> ``` gcloud services enable healthcare.googleapis.com ```
+Operation "operations/acf.p2-1083335448446-9a636579-09c8-45fe-abe6-3ff947fe28c8" finished successfully.
+
+C:\Windows\System32> ``` gcloud auth login ```
+You are now logged in as [rekaharisri@gmail.com].                               
+Your current project is [healthcare-system-api].  You can change this setting by running:                     
+$ gcloud config set project PROJECT_ID 
+
+C:\Windows\System32> ``` gcloud auth list ```                                                        
+Credentialed Accounts     
+ACTIVE  ACCOUNT rekaharisri@gmail.com     
+
+To set the active account, run:                                            
+ $ ``` gcloud config set account `ACCOUNT`  ```
+C:\Windows\System32> ``` gcloud auth application-default print-access-token  ```                                          
+![alt text](image-1.png)                                                                                                                         
+C:\Windows\System32> gcloud services enable 
+healthcare.googleapis.com                                                                                                         C:\Windows\System32>gcloud auth application-default login --scopes=https://www.googleapis.com/auth/cloud-platform                                                                              
+Your browser has been opened to visit:                                                                                                                                           Credentials saved to file: [C:\Users\nreka\AppData\Roaming\gcloud\application_default_credentials.json]                                                                                                      
+These credentials will be used by any library that requests Application Default Credentials Quota project "healthcare-system-api" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.                                                                                                                                        C:\Windows\System32> ``` gcloud auth application-default print-access-token   ```                                                                                                                      
+ ya29.a0AeXRPp6FFzavWUUIq1pXWlSW_FQGmb4WRyNH72EGPU_TBBz1uNi-7tnRplLZS5tUYqmcZNyXbf6WgVZGgRxnNO2AgOIO0tZfa_xKJSPWpIRptO9E4496pUDouqy98hWcxgggAKZZrXZw3xMYNaO9CX1bjIStIvpRrwgmH0-daCgYKAeISARASFQHGX2MiB2NqQQpeaWNN7FWzkw26yQ0175  
+
+MVN TEST
+
+C:\Windows\System32> ``` gcloud healthcare datasets list --location=us-central1 --project=healthcare-system-api   ```  
+    ID                                 LOCATION           TIMEZONE  ENCRYPTION                   
+   healthcare_data    us-central1            Google-managed key     
+
+TO DELETE DATASET:
+``` gcloud healthcare datasets delete healthcare_data --location=us-central1 --project=healthcare-system-api ```
+
+![alt text](image.png)
+
+
