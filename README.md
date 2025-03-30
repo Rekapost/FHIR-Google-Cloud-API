@@ -74,7 +74,6 @@ C:\Windows\System32> ``` gcloud healthcare datasets list --location=us-central1 
 TO DELETE DATASET:
 ``` gcloud healthcare datasets delete healthcare_data --location=us-central1 --project=healthcare-system-api ```
 
-![alt text](image.png)
 
 
 ![alt text](image-3.png)
