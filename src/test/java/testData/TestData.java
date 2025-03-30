@@ -14,7 +14,7 @@ public class TestData {
     public static String projectId = "healthcare-system-api";  // Your Google Cloud Project ID
     public static String location = "us-central1";     // Supported location (e.g., us-central1)
     public static String datasetId = "healthcare_data";  // Your unique Dataset ID
-    public static String accessToken = "ya29.a0AeXRPp4LiIUmlZMdnsf_f6Oa3jIldkEpyDdL2DXDdnogociwC6pFSVhq44TdH2lUofOXEMn6zpoBPg6dO8gHwzVppCMxeXjuLucOQwKYeukaxr8ysfId_nTDA7-YfEPCg6mM4f8bPXb-UmtJxDvLHZOm9gsoaKGJiwOAFTIlawaCgYKAboSARASFQHGX2MiQmEvnlVXQ4xHTEbKBmHjZA0177";
+    public static String accessToken = "ya29.a0AeQHGX2MiQmEvnlVXQ4xHTEbKBmHjZA0177";
     //public static String accessToken = getAccessToken();
 
 }

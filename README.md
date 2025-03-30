@@ -39,7 +39,7 @@ Welcome to Cloud Shell! Type "help" to get started.
 Your Cloud Platform project in this session is set to healthcare-system-api.
 Use `gcloud config set project [PROJECT_ID]` to change to a different project.
 rekaharisri@cloudshell:~ (healthcare-system-api)$ ``` gcloud auth application-default print-access-token ```
-ya29.a0AeXRPp5pSqxgOEevFfHlkrSQSu_S6KAVbE7W6RrOZg9wRZAiCeRMTKf4cAm3atSjkWP39vQKpGG_v0KlojWThkwFAmrjcslb-Uaw6-bC-AyLDsFmhySK8Ne3atE9sGMN8aHTbsl4rXaFCG_PSvWeZFl1e7DLL1PZSoylu-o8hCqt4VphGwMKrgwmvG4BSIHFanDa9MFfqWql4Ga-OUs8KS5iABes5cG9weIQQHqRWDDQoLt4yLDxjWOEEttInSsU7Ehv1hBqacr6mZ1in7b9m5nZhbLauTJAI2GGu9iqy050jGoMJVonossnKvSyex2kcDWzY39zWEYLZQqwegdcsr-EnfU0fgwBUCR477Cizr1xe0js4DdhP81glNk17RbI7Gt2LXYPiGonxMhemj54LN7ZgeXKmlfD1R55aCgYKAUASARASFQHGX2MifY6YSRnxOtLqgik_CAu-WQ0427
+
 rekaharisri@cloudshell:~ (healthcare-system-api)$ 
 ![alt text](image-2.png)
 
@@ -63,7 +63,7 @@ C:\Windows\System32> gcloud services enable
 healthcare.googleapis.com                                                                                                         C:\Windows\System32>gcloud auth application-default login --scopes=https://www.googleapis.com/auth/cloud-platform                                                                              
 Your browser has been opened to visit:                                                                                                                                           Credentials saved to file: [C:\Users\nreka\AppData\Roaming\gcloud\application_default_credentials.json]                                                                                                      
 These credentials will be used by any library that requests Application Default Credentials Quota project "healthcare-system-api" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.                                                                                                                                        C:\Windows\System32> ``` gcloud auth application-default print-access-token   ```                                                                                                                      
- ya29.a0AeXRPp6FFzavWUUIq1pXWlSW_FQGmb4WRyNH72EGPU_TBBz1uNi-7tnRplLZS5tUYqmcZNyXbf6WgVZGgRxnNO2AgOIO0tZfa_xKJSPWpIRptO9E4496pUDouqy98hWcxgggAKZZrXZw3xMYNaO9CX1bjIStIvpRrwgmH0-daCgYKAeISARASFQHGX2MiB2NqQQpeaWNN7FWzkw26yQ0175  
+  
 
 MVN TEST
 
@@ -77,3 +77,4 @@ TO DELETE DATASET:
 ![alt text](image.png)
 
 
+![alt text](image-3.png)
