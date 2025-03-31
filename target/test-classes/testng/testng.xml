@@ -1,8 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Healthcare API Test Suite"  parallel="false"  >
-    <test name="Healthcare API Tests" >
-        <classes>
-            <class name = "testRunner.TestRunner" />
-        </classes>
-    </test>
-</suite>

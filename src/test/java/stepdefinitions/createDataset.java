@@ -20,6 +20,7 @@ public class createDataset {
     public void set_the_base_url_for_the_google_cloud_healthcare_api() {
         // Set base URL for the Google Cloud Healthcare API
         String baseURL = "https://healthcare.googleapis.com/v1/";
+        
         // Set base URL for REST Assured
         RestAssured.baseURI = baseURL;
     }
@@ -67,9 +68,13 @@ public class createDataset {
        // Print response for debugging
        int statusCode = response.getStatusCode();
         switch (statusCode) {
+            case 200:
+                System.out.println("All Stores are listed successfully.");
+                loggerload.info("All Stores are listed successfully.");
             case 201:
                 System.out.println("Dataset created successfully.");
                 loggerload.info("Dataset created successfully.");
+                loggerload.info("Response Body: " + response.getBody().asString());
                 System.out.println("Response: " + response.getBody().asString());
                 System.out.println("Status Code: " + response.getStatusCode());
                 break;
@@ -84,4 +89,4 @@ public class createDataset {
         }
     }
     
-
+//https://healthcare.googleapis.com/v1/projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data

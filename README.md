@@ -73,6 +73,16 @@ C:\Windows\System32> ``` gcloud healthcare datasets list --location=us-central1 
 TO DELETE DATASET:
 ``` gcloud healthcare datasets delete healthcare_data --location=us-central1 --project=healthcare-system-api ```
 
-
-
 ![alt text](image-3.png)
+
+Create Dataset:
+![alt text](image-4.png)
+
+Patch Timezone in dataset :
+![alt text](image-5.png)
+
+create FHIR store :
+![alt text](image-6.png)
+
+Get FHIR Stores
+![alt text](image-7.png)

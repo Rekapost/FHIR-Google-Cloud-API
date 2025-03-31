@@ -1,5 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Healthcare API Test Suite"  parallel="false"  >
+<suite name="Healthcare API Test Suite"  thread-count="2" parallel="classes" >
+
+    <listeners>
+		<listener class-name="reporting.SetUp"></listener>
+	</listeners>
+
     <test name="Healthcare API Tests" >
         <classes>
             <class name = "testRunner.TestRunner" />

@@ -17,15 +17,13 @@ public static String location = "us-central2";
 @When("A PATCH request is made to update the dataset timezone to {string}.")
 public void a_patch_request_is_made_to_update_the_dataset_timezone(String timeZone) {
     String requestUrl;
-    String updateRequestBody = "{\n" +
-        "  \"timeZone\": \"" + timeZone + "\"\n" +
-        "}";
+    String updateRequestBody = "{ \"timeZone\": \"America/Chicago\" }";
 
     loggerload.info("Executing PATCH request for dataset timezone update...");
     System.out.println("Executing PATCH request for dataset timezone update...");
     System.out.println("Request Body: " + updateRequestBody);
     System.out.println("OAuth2 Token: " + (TestData.accessToken != null ? "Token Present" : "Token is NULL"));
-
+    //String requestUrl = "https://healthcare.googleapis.com/v1/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone";
     requestUrl = "https://healthcare.googleapis.com/v1/projects/" 
         + TestData.projectId + "/locations/" 
         + TestData.location + "/datasets/" 
@@ -52,12 +50,12 @@ public void a_patch_request_is_made_to_update_the_dataset_timezone(String timeZo
             } else {
                 System.out.println("Status Code: " + response.getStatusCode());
             }
-        
+       
 
         int statusCode = this.response.getStatusCode();
         System.out.println("Status Code: " + statusCode);
         loggerload.info("Status Code: " + statusCode);
-
+     
         if (statusCode == 200 || statusCode == 201) {
             System.out.println("Dataset timezone updated successfully.");
             loggerload.info("Dataset timezone updated successfully.");
@@ -78,6 +76,8 @@ public void the_response_body_and_status_code_are_printed_out_for_validation_in_
         return;
     }
 
+
+    loggerload.info("Response Body: " + response.getBody().asString());
     System.out.println("Response Body: " + this.response.getBody().asString());
     System.out.println("Status Code: " + this.response.getStatusCode());
 }
