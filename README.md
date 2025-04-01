@@ -92,6 +92,8 @@ C:\Windows\System32> ``` gcloud healthcare datasets list --location=us-central1 
 ### Get FHIR Stores
 ![alt text](image-7.png)
 
-[text](reports/TestReport2025.04.01.12.10.49.html)
-
-[text](reports/TestReport2025.04.01.12.56.17.html)
+### To Open Report in github:
+Open your GitHub repo.
+Navigate to the reports/ folder where your Extent Report (TestReport....html) is stored.
+Click on the file and Download it.
+Open it in a browser.
