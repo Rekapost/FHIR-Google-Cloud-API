@@ -1,4 +1,4 @@
-*** Creating and managing FHIR stores ***
+# Creating and managing FHIR stores ***
 
 ## FHIR versions DSTU2, STU3, and R4. 
 R4 (Release 4)
@@ -38,10 +38,9 @@ Updated property [core/project].
 Welcome to Cloud Shell! Type "help" to get started.
 Your Cloud Platform project in this session is set to healthcare-system-api.
 Use `gcloud config set project [PROJECT_ID]` to change to a different project.
+
 rekaharisri@cloudshell:~ (healthcare-system-api)$ ``` gcloud auth application-default print-access-token ```
-
 rekaharisri@cloudshell:~ (healthcare-system-api)$ 
-
 
 C:\Program Files (x86)\Google\Cloud SDK> ``` gcloud services enable healthcare.googleapis.com ```
 Operation "operations/acf.p2-1083335448446-9a636579-09c8-45fe-abe6-3ff947fe28c8" finished successfully.
@@ -57,32 +56,42 @@ ACTIVE  ACCOUNT rekaharisri@gmail.com
 
 To set the active account, run:                                            
  $ ``` gcloud config set account `ACCOUNT`  ```
-C:\Windows\System32> ``` gcloud auth application-default print-access-token  ```                                          
-                                                                                                                         
-C:\Windows\System32> gcloud services enable 
-healthcare.googleapis.com                                                                                                         C:\Windows\System32>gcloud auth application-default login --scopes=https://www.googleapis.com/auth/cloud-platform                                                                              
-Your browser has been opened to visit:                                                                                                                                           Credentials saved to file: [C:\Users\nreka\AppData\Roaming\gcloud\application_default_credentials.json]                                                                                                      
-These credentials will be used by any library that requests Application Default Credentials Quota project "healthcare-system-api" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.                                                                                                                                        C:\Windows\System32> ``` gcloud auth application-default print-access-token   ```                                                                                                                      
+
+C:\Windows\System32> ``` gcloud auth application-default print-access-token  ```                                                                                                                                           
+C:\Windows\System32> ``` gcloud services enable 
+healthcare.googleapis.com          ```                                                                               C:\Windows\System32> ``` gcloud auth application-default login --scopes=https://www.googleapis.com/auth/cloud-platform      ```                                                                        
+Your browser has been opened to visit:                                                                            Credentials saved to file: [C:\Users\nreka\AppData\Roaming\gcloud\application_default_credentials.json]                                                                                                      
+These credentials will be used by any library that requests Application Default Credentials Quota project "healthcare-system-api" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.                                                                                                                                        C:\Windows\System32> ``` gcloud auth application-default print-access-token   ```                                                  
   
-MVN TEST
+``` mvn clean test ```
 
 C:\Windows\System32> ``` gcloud healthcare datasets list --location=us-central1 --project=healthcare-system-api   ```  
     ID                                 LOCATION           TIMEZONE  ENCRYPTION                   
    healthcare_data    us-central1            Google-managed key     
 
-TO DELETE DATASET:
+#### TO DELETE DATASET:
 ``` gcloud healthcare datasets delete healthcare_data --location=us-central1 --project=healthcare-system-api ```
+
+#### TO DELETE FHIR STORE:
+``` gcloud healthcare fhir-stores delete Dar_83 --dataset=healthcare_data --location=us-central1 --project=healthcare-system-api ```
 
 ![alt text](image-3.png)
 
-Create Dataset:
+### Create Dataset:
 ![alt text](image-4.png)
 
-Patch Timezone in dataset :
+### Patch Timezone in dataset :
 ![alt text](image-5.png)
 
-create FHIR store :
+### create FHIR store :
 ![alt text](image-6.png)
 
-Get FHIR Stores
+![alt text](<Screenshot 2025-04-01 101456.png>)
+![alt text](<Screenshot 2025-04-01 101549.png>)
+
+### Get FHIR Stores
 ![alt text](image-7.png)
+
+[text](reports/TestReport2025.04.01.12.10.49.html)
+
+[text](reports/TestReport2025.04.01.12.56.17.html)

@@ -4,8 +4,30 @@ package hooks;
     import java.io.IOException;
     import io.cucumber.java.After;
     import io.cucumber.java.Before;
-    
+import io.cucumber.java.Scenario;
+
     public class hook {
+        //public String scenarioName;
+        //public static String scenarioName; // Store scenario name globally
+        //public static ThreadLocal<String> featureName = new ThreadLocal<>();
+        public static ThreadLocal<String> scenarioName = new ThreadLocal<>();
+
+        @Before
+        public void beforeScenario(Scenario scenario) {
+             //scenarioName.set(scenario.getName()); // Store scenario name per thread
+             // Extract Feature Name from Scenario Source Tag
+            //scenarioName= scenario.getName();
+            scenarioName.set(scenario.getName());
+            System.out.println("Running scenario: " + scenarioName);
+            //String rawFeatureName = scenario.getUri().toString();
+            //String featureFileName = rawFeatureName.substring(rawFeatureName.lastIndexOf('/') + 1).replace(".feature", "");
+        
+        //featureName.set(featureFileName); // ✅ Store feature name
+        //scenarioName.set(scenario.getName()); // ✅ Store scenario name
+        }
+        public static String getScenarioName() {
+            return scenarioName.get(); // Get the scenario name safely
+        }
 
        @After
             public void openHtmlReport(){

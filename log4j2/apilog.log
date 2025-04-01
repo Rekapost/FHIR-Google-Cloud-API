@@ -1,43 +1,90 @@
-[INFO ] 2025-03-31 16:38:48.540 [TestNG-PoolService-3] CreateFHIRStore - Environment: qa
-[INFO ] 2025-03-31 16:38:48.854 [TestNG-PoolService-3] CreateFHIRStore - BaseURI: https://healthcare.googleapis.com/v1
-[INFO ] 2025-03-31 16:38:49.135 [TestNG-PoolService-4] createDataset - Access token: ya29.a0AeXRPp6uHTmmDT96Q3bHO1d7meqtGYeuIyVWXCQqVB3s_chXjLsn2HI5KySjtl41LDfR5sErksnai5fZ6yxc5nSCjm9tcWpLsTfDHX_bsDp4ecikWt5uKqJQtN2UAe2c7sTOFsFNoPxNRhBqePrkyyGGzEHapnqPEwcmsKe0xQaCgYKARQSARASFQHGX2MiMs1TJsTeolA-S0-L-NDvdQ0177
-[INFO ] 2025-03-31 16:38:49.135 [TestNG-PoolService-2] createDataset - Access token: ya29.a0AeXRPp6uHTmmDT96Q3bHO1d7meqtGYeuIyVWXCQqVB3s_chXjLsn2HI5KySjtl41LDfR5sErksnai5fZ6yxc5nSCjm9tcWpLsTfDHX_bsDp4ecikWt5uKqJQtN2UAe2c7sTOFsFNoPxNRhBqePrkyyGGzEHapnqPEwcmsKe0xQaCgYKARQSARASFQHGX2MiMs1TJsTeolA-S0-L-NDvdQ0177
-[INFO ] 2025-03-31 16:38:49.135 [TestNG-PoolService-1] createDataset - Access token: ya29.a0AeXRPp6uHTmmDT96Q3bHO1d7meqtGYeuIyVWXCQqVB3s_chXjLsn2HI5KySjtl41LDfR5sErksnai5fZ6yxc5nSCjm9tcWpLsTfDHX_bsDp4ecikWt5uKqJQtN2UAe2c7sTOFsFNoPxNRhBqePrkyyGGzEHapnqPEwcmsKe0xQaCgYKARQSARASFQHGX2MiMs1TJsTeolA-S0-L-NDvdQ0177
-[INFO ] 2025-03-31 16:38:49.141 [TestNG-PoolService-2] Patch - Executing PATCH request for dataset timezone update...
-[INFO ] 2025-03-31 16:38:49.141 [TestNG-PoolService-1] createDataset - Make POST request to create dataset 
-[INFO ] 2025-03-31 16:38:50.064 [TestNG-PoolService-3] CreateFHIRStore - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Raja_85
-[INFO ] 2025-03-31 16:38:50.065 [TestNG-PoolService-3] CreateFHIRStore - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Raja_85
-[INFO ] 2025-03-31 16:38:51.384 [TestNG-PoolService-3] CreateFHIRStore - Response Status Code: 409
-[INFO ] 2025-03-31 16:38:51.384 [TestNG-PoolService-3] CreateFHIRStore - Response Body: {
-  "error": {
-    "code": 409,
-    "message": "already exists",
-    "status": "ALREADY_EXISTS"
-  }
+[INFO ] 2025-04-01 12:56:18.971 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 12:56:19.084 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 12:56:19.087 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 12:56:19.090 [TestNG-test-Healthcare API Tests-1] CreateDataset - Make POST request to create dataset 
+[INFO ] 2025-04-01 12:56:19.602 [TestNG-test-Healthcare API Tests-1] CreateDataset - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
+[INFO ] 2025-04-01 12:56:19.604 [TestNG-test-Healthcare API Tests-1] CreateDataset - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
+[INFO ] 2025-04-01 12:56:25.250 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 12:56:25.251 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 12:56:25.252 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 12:56:25.257 [TestNG-test-Healthcare API Tests-1] Patch - Executing PATCH request for dataset timezone update...
+[INFO ] 2025-04-01 12:56:25.314 [TestNG-test-Healthcare API Tests-1] Patch - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
+[INFO ] 2025-04-01 12:56:25.315 [TestNG-test-Healthcare API Tests-1] Patch - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
+[INFO ] 2025-04-01 12:56:25.650 [TestNG-test-Healthcare API Tests-1] Patch - Status Code: 200
+[INFO ] 2025-04-01 12:56:25.651 [TestNG-test-Healthcare API Tests-1] Patch - Dataset timezone updated successfully.
+[INFO ] 2025-04-01 12:56:25.651 [TestNG-test-Healthcare API Tests-1] Patch - Response Body: {
+    "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data",
+    "timeZone": "UTC",
+    "satisfiesPzi": true
 }
-
-[INFO ] 2025-03-31 16:38:51.402 [TestNG-PoolService-2] Patch - Status Code: 200
-[INFO ] 2025-03-31 16:38:51.409 [TestNG-PoolService-2] Patch - Dataset timezone updated successfully.
-[INFO ] 2025-03-31 16:38:51.410 [TestNG-PoolService-1] createDataset - Dataset already exists. Skipping creation.
-[INFO ] 2025-03-31 16:38:51.410 [TestNG-PoolService-2] Patch - Response Body: {
-  "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data",
-  "timeZone": "America/Chicago",
-  "satisfiesPzi": true
+[INFO ] 2025-04-01 12:56:25.668 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 12:56:25.669 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 12:56:25.672 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 12:56:25.715 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
+[INFO ] 2025-04-01 12:56:25.715 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
+[INFO ] 2025-04-01 12:56:25.942 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Status Code: 200
+[INFO ] 2025-04-01 12:56:25.943 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Body: {
+    "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Dar_83",
+    "version": "R4",
+    "complexDataTypeReferenceParsing": "ENABLED"
 }
-
-[INFO ] 2025-03-31 16:38:51.425 [TestNG-PoolService-4] GetAllFHIRStores - All Stores are listed successfully.
-[INFO ] 2025-03-31 16:38:51.426 [TestNG-PoolService-4] GetAllFHIRStores - Response Body: {
-  "fhirStores": [
-    {
-      "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Raja_85",
-      "version": "R4",
-      "complexDataTypeReferenceParsing": "ENABLED"
-    },
-    {
-      "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Reka_83",
-      "version": "R4",
-      "complexDataTypeReferenceParsing": "ENABLED"
-    }
-  ]
+[INFO ] 2025-04-01 12:56:25.965 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 12:56:25.967 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 12:56:25.968 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 12:56:25.996 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
+[INFO ] 2025-04-01 12:56:25.996 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
+[INFO ] 2025-04-01 12:56:26.242 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - All Stores are listed successfully.
+[INFO ] 2025-04-01 12:56:26.243 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Response Body: {
+    "fhirStores": [
+        {
+            "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Dar_83",
+            "version": "R4",
+            "complexDataTypeReferenceParsing": "ENABLED"
+        }
+    ]
 }
-
+[INFO ] 2025-04-01 13:06:43.538 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 13:06:43.653 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 13:06:43.656 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 13:06:43.658 [TestNG-test-Healthcare API Tests-1] CreateDataset - Make POST request to create dataset 
+[INFO ] 2025-04-01 13:06:44.148 [TestNG-test-Healthcare API Tests-1] CreateDataset - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
+[INFO ] 2025-04-01 13:06:44.149 [TestNG-test-Healthcare API Tests-1] CreateDataset - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
+[INFO ] 2025-04-01 13:06:49.953 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 13:06:49.954 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 13:06:49.956 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 13:06:49.957 [TestNG-test-Healthcare API Tests-1] Patch - Executing PATCH request for dataset timezone update...
+[INFO ] 2025-04-01 13:06:50.007 [TestNG-test-Healthcare API Tests-1] Patch - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
+[INFO ] 2025-04-01 13:06:50.008 [TestNG-test-Healthcare API Tests-1] Patch - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
+[INFO ] 2025-04-01 13:06:50.322 [TestNG-test-Healthcare API Tests-1] Patch - Status Code: 200
+[INFO ] 2025-04-01 13:06:50.323 [TestNG-test-Healthcare API Tests-1] Patch - Dataset timezone updated successfully.
+[INFO ] 2025-04-01 13:06:50.324 [TestNG-test-Healthcare API Tests-1] Patch - Response Body: {
+    "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data",
+    "timeZone": "UTC",
+    "satisfiesPzi": true
+}
+[INFO ] 2025-04-01 13:06:50.351 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 13:06:50.353 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 13:06:50.356 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 13:06:50.414 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
+[INFO ] 2025-04-01 13:06:50.414 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
+[INFO ] 2025-04-01 13:06:50.674 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Status Code: 200
+[INFO ] 2025-04-01 13:06:50.674 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Body: {
+    "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Dar_83",
+    "version": "R4",
+    "complexDataTypeReferenceParsing": "ENABLED"
+}
+[INFO ] 2025-04-01 13:06:50.692 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-01 13:06:50.693 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-01 13:06:50.695 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: ya29.a0AeXRPp6lNBm2ZRrhlyzm_pmzYgm7QyMySmU-QuCKuyCk-RHEKFRQztnbVT51vC91elSZzjGBTNoy6tq4OMSzil9J38__lChYg4uhgCyFcTdHd6kBsx2pfryuA_TwAQpVYH1XJFg6dGExU8Un1fbyiGQH9IEDK2O3EvwWBV6GlAaCgYKASYSARASFQHGX2MigTqq9-U8czT5y54i6XDZHw0177
+[INFO ] 2025-04-01 13:06:50.720 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
+[INFO ] 2025-04-01 13:06:50.721 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
+[INFO ] 2025-04-01 13:06:50.966 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - All Stores are listed successfully.
+[INFO ] 2025-04-01 13:06:50.967 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Response Body: {
+    "fhirStores": [
+        {
+            "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Dar_83",
+            "version": "R4",
+            "complexDataTypeReferenceParsing": "ENABLED"
+        }
+    ]
+}

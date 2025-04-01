@@ -1,6 +1,6 @@
 package reporting;
 import java.util.Arrays;
-
+import hooks.hook;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -37,7 +37,32 @@ public class SetUp implements ITestListener {
 	// excuted automatically
 	public void onTestStart(ITestResult result) {
 		// not implemented
-		ExtentTest test=create_ExtentReport.createTest("Test Name :   "+result.getTestClass().getName()+" -  "+result.getMethod().getMethodName());
+		//String testName = result.getMethod().getDescription(); // Extract description (Scenario Name)
+		//String testName = hook.scenarioName; // Get Scenario Name from Hooks
+		String testName = hook.getScenarioName(); // Get the correct scenario name
+		//String scenario = hook.scenarioName.get(); // ✅ Get Scenario Name
+        //String feature = hook.featureName.get();   // ✅ Get Feature Name
+		
+	/*	// Fallback to default TestNG test name if not set
+        if (scenario == null || scenario.isEmpty()) {
+            scenario = result.getTestContext().getName();
+        }
+        if (feature == null || feature.isEmpty()) {
+            feature = "Unknown Feature";
+        }
+	*/	
+		if (testName == null || testName.isEmpty()) {
+			//testName = result.getTestClass().getName() + " - " + result.getMethod().getMethodName(); // Default fallback
+			testName = result.getTestContext().getName(); // Get TestNG Context Name
+		}
+		
+
+		ExtentTest test=create_ExtentReport.createTest("Test Name :   "+testName);
+
+		// Set Feature & Scenario Name in Extent Report
+        //ExtentTest test = create_ExtentReport.createTest("Feature: " + feature + " | Scenario: " + scenario);
+        //extentTestThreadLocal.set(test);
+
 		// extract name of current test
 		// set by thread , test executed by current thread / given thread
 		extentTestThreadLocal.set(test);	

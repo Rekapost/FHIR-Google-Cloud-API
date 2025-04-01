@@ -7,10 +7,9 @@ import io.restassured.specification.QueryableRequestSpecification;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.SpecificationQuerier;
 import reporting.ExtentReportManager;
-import testData.TestData;
 
 public class Perform {
-	private static RequestSpecification getRequestSpecification(String baseUri, String endpoint, String token, Object payload, Map<String, String> headers) {
+	private static RequestSpecification getRequestSpecification(String baseUri, String endpoint, String token, Object payload, Map<String, String> headers, String method) {
 		// Build the request specification
 		RequestSpecification requestSpec = RestAssured						
 			.given()
@@ -19,23 +18,44 @@ public class Perform {
 			.auth()
 			.oauth2(token)
 			.contentType(ContentType.JSON);	
-
-		// If additional headers are provided, add them
+		
+		// Add headers if present
 		if (headers != null && !headers.isEmpty()) {
 			requestSpec.headers(headers);  // Add the custom headers to the request
 		}
-	
 		return requestSpec;
 	}
-	public static Response performPost(String baseUri, String endpoint, String token, Map<String, String> headers, Object payload) {
+
+	public static Response performSendRequest(String baseUri, String endpoint, String token, Map<String, String> headers, Object payload, String method) {
 		// Get the request specification using the helper method
-		RequestSpecification requestSpecification = getRequestSpecification(baseUri, endpoint, token,payload, headers);
-	
-		// Perform the POST request with the request body
-		Response response = requestSpecification
-							.body(payload)						
-							.post(baseUri + endpoint); // Ensure correct endpoint             // Execute the POST request
-						
+		RequestSpecification requestSpecification = getRequestSpecification(baseUri, endpoint, token,payload, headers, method);
+	  
+		// Add payload only for POST and PUT methods
+		if (payload != null && (method.equalsIgnoreCase("POST") || method.equalsIgnoreCase("PUT"))) {
+			requestSpecification.body(payload);
+		}
+
+		Response response;
+		switch (method.toUpperCase()) {
+			case "POST":
+				response = requestSpecification.post(baseUri + endpoint);
+				break;
+			case "GET":
+				response = requestSpecification.get();
+				break;
+			case "PUT":
+				response = requestSpecification.put();
+				break;
+			case "PATCH":
+				response = requestSpecification.patch(baseUri + endpoint);
+				break;	
+			case "DELETE":
+				response = requestSpecification.delete();
+				break;
+			default:
+				throw new IllegalArgumentException("Invalid HTTP method: " + method);
+		}
+
 		// Optionally, log the request and response for debugging
 		printRequestLogInReport(requestSpecification);
 		printResponsetLogInReport(response);

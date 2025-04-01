@@ -1,41 +1,36 @@
 package stepdefinitions;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import static io.restassured.RestAssured.given;
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import testData.TestData;
+import utilities.ExcelReader;
 
-public class createDataset {
+public class CreateDataset {
     String requestBody;
-    Response response;   
-    private static final Logger loggerload = LogManager.getLogger(createDataset.class);
-    
-    @Given("Set the base URL for the Google Cloud Healthcare API.")
-    public void set_the_base_url_for_the_google_cloud_healthcare_api() {
-        // Set base URL for the Google Cloud Healthcare API
-        String baseURL = "https://healthcare.googleapis.com/v1/";
-        
-        // Set base URL for REST Assured
-        RestAssured.baseURI = baseURL;
-    }
-    @Then("You need an OAuth2 token \\(accessToken) to authenticate the request.")
-    public void you_need_an_o_auth2_token_access_token_to_authenticate_the_request() {
-        //try {
-            //accessToken = getAccessToken();
-            System.out.println("Access token: " + TestData.accessToken);
-            loggerload.info("Access token: " + TestData.accessToken);
-        //} catch (IOException e) {
-        //    System.err.println("Failed to retrieve access token: " + e.getMessage());
-            //e.printStackTrace();
-        //}
+    Response response; 
+    public String baseuri;
+    public String endpoint;
+    public String accessToken;  
+    private static final Logger loggerload = LogManager.getLogger(CreateDataset.class);
+
+     // To get Endpoint from Excel using ExcelReader
+     public String getEndpoint(String sheetName, Integer rowNumber) throws IOException, InvalidFormatException {
+        ExcelReader reader = new ExcelReader();   
+        List<Map<String, String>> testData = reader.getData("src/test/resources/Endpoint/FHIRExcel.xlsx", "CreateDataSetEndpoint");
+        endpoint = testData.get(rowNumber).get("FHIRDataSetEndpoint"); // Ensure exact column name
+        loggerload.info("Endpoint"+ endpoint);
+        return endpoint;
     }
 
+   
     @Then("The requestBody of the dataset having {string},{string},{string},{string}.")
     public void the_request_body_of_the_dataset_having(String string, String string2, String string3, String string4) {
     // Define the payload for creating a dataset (adjust fields based on API documentation)
@@ -48,10 +43,11 @@ public class createDataset {
         */
         requestBody = "{}"; // No fields required in the request body
     }
+
     @When("A POST request is made to the API endpoint: \\/projects\\/\\{projectId}\\/locations\\/\\{location}\\/datasets.")
-    public void a_post_request_is_made_to_the_api_endpoint_projects_locations_datasets() {
+    public void a_post_request_is_made_to_the_api_endpoint_projects_locations_datasets() throws IOException, InvalidFormatException {
         loggerload.info("Make POST request to create dataset ");
-        // Make POST request to create dataset      
+        /*// Make POST request to create dataset      
             response = given()
             .log().all()  // Print request details for debugging
             .auth()
@@ -62,21 +58,29 @@ public class createDataset {
             .post("projects/" + TestData.projectId + "/locations/" + TestData.location + "/datasets?datasetId=" + TestData.datasetId)
             .then().log().all().extract().response();
             }
-
+        */
+        baseuri = CommonStepDefinition.baseuri;
+        accessToken = CommonStepDefinition.accessToken;
+        endpoint = getEndpoint("Endpoint", 0); // Assuming row 0 for now
+        System.out.println("Final API URL: " + endpoint);
+        loggerload.info("Final API URL: " + endpoint);
+        response = utilities.Perform.performSendRequest(baseuri, endpoint, accessToken, new HashMap<>(), requestBody,"POST" );
+    }    
+    
     @Then("The response body and status code are printed out for validation.")
     public void the_response_body_and_status_code_are_printed_out_for_validation() {
        // Print response for debugging
        int statusCode = response.getStatusCode();
-        switch (statusCode) {
-            case 200:
-                System.out.println("All Stores are listed successfully.");
-                loggerload.info("All Stores are listed successfully.");
+        switch (statusCode) { 
             case 201:
                 System.out.println("Dataset created successfully.");
                 loggerload.info("Dataset created successfully.");
                 loggerload.info("Response Body: " + response.getBody().asString());
                 System.out.println("Response: " + response.getBody().asString());
                 System.out.println("Status Code: " + response.getStatusCode());
+                break;
+            case 403:
+                System.out.println("Insufficient permissions to create a dataset.");
                 break;
             case 409:
                 System.out.println("Dataset already exists. Skipping creation.");
