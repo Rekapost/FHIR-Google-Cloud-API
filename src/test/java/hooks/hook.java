@@ -29,33 +29,30 @@ import io.cucumber.java.Scenario;
             return scenarioName.get(); // Get the scenario name safely
         }
 
-       @After
-            public void openHtmlReport(){
-                // Generate HTML report here
-                try { 
-                    File htmlReportFile = new File("/target/cucumber-html-report");
-                    if(htmlReportFile.exists()){
-                        Desktop.getDesktop().browse(htmlReportFile.toURI());
-                    }else{
-                        System.out.println("Report file not found:" + htmlReportFile.getAbsolutePath());
-                        }
-                    }catch(IOException e){
-                    System.out.println("Report File not found");
+        @After
+        public void openHtmlReport(){
+            try { 
+                File htmlReportFile = new File("target/cucumber-html-report/index.html"); // Corrected path
+                if(htmlReportFile.exists()){
+                    Desktop.getDesktop().browse(htmlReportFile.toURI());
+                } else {
+                    System.out.println("Report file not found: " + htmlReportFile.getAbsolutePath());
                 }
-           
-                //Allure
-                try{
-                    ProcessBuilder builder = new ProcessBuilder("C:/Users/nreka/Tools/allure-2.30.0/bin/allure", "serve", "allure-results");
-                    builder.inheritIO();
-                    Process process= builder.start();
-                    process.waitFor();
-    
-                    //allure serve cmd automatically opnes report in browser
-                    System.out.println("Report File found");
-                } catch (IOException | InterruptedException e) {
-                    System.out.println("Report File not found");
-                }
+            } catch(IOException e){
+                System.out.println("Error opening Cucumber report");
             }
+        
+            // ✅ Allure Report
+            try {
+                ProcessBuilder builder = new ProcessBuilder("C:/Users/nreka/Tools/allure-2.30.0/bin/allure", "serve", "allure-results");
+                builder.inheritIO();
+                Process process = builder.start();
+                process.waitFor();
+            } catch (IOException | InterruptedException e) {
+                System.out.println("Error opening Allure report");
+            }
+        }
+        
 
         //    @After
             public void stopDockerGrid() throws IOException, InterruptedException

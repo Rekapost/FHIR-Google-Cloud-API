@@ -13,8 +13,7 @@ import io.cucumber.testng.CucumberOptions;
             },
     glue = {"stepdefinitions","hooks"},
     plugin = {"pretty", 
-              "json:target/cucumber-report.json",
-              "html:target/cucumber-html-report",
+              "html:target/cucumber-html-report",   // Generates HTML report
               "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
             },
     monochrome = true,

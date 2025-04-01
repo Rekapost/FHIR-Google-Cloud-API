@@ -97,3 +97,7 @@ Open your GitHub repo.
 Navigate to the reports/ folder where your Extent Report (TestReport....html) is stored.
 Click on the file and Download it.
 Open it in a browser.
+
+## Contact
+
+You can connect with me on [LinkedIn] https://www.linkedin.com/in/reka-srimurugan-040296252/
