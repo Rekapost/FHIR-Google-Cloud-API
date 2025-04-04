@@ -104,6 +104,19 @@ docker build -t fhir-googlecloudapi-bdd-cucumber-framework .
 
 Azure
 : 
+
+![alt text](image-9.png)
+##[error]No hosted parallelism has been purchased or granted. To request a free parallelism grant, please fill out the following form https://aka.ms/azpipelines-parallelism-request
+
+U have to get Subscription and then only u can run pipeline in azure
+![alt text](image-10.png)
+
+It will Show like this , if u run pipeline when u have paid and got the subscription
+![alt text](image-11.png)
+![alt text](image-14.png)
+![alt text](image-12.png)
+![alt text](image-13.png)
+
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl config current-context
 minikube
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> minikube start
