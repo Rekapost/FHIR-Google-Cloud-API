@@ -61,7 +61,7 @@ C:\Windows\System32> ``` gcloud auth application-default print-access-token  ```
 C:\Windows\System32> ``` gcloud services enable 
 healthcare.googleapis.com          ```                                                                               C:\Windows\System32> ``` gcloud auth application-default login --scopes=https://www.googleapis.com/auth/cloud-platform      ```                                                                        
 Your browser has been opened to visit:                                                                            Credentials saved to file: [C:\Users\nreka\AppData\Roaming\gcloud\application_default_credentials.json]                                                                                                      
-These credentials will be used by any library that requests Application Default Credentials Quota project "healthcare-system-api" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.                                                                                                                                        C:\Windows\System32> ``` gcloud auth application-default print-access-token   ```                                                  
+These credentials will be used by any library that requests Application Default Credentials Quota project "healthcare-system-api" was added to ADC which can be used by Google client libraries for billing and quota. Note that some services may still bill the project owning the resource.                                                                                                                  C:\Windows\System32> ``` gcloud auth application-default print-access-token   ```                                                  
   
 ``` mvn clean test ```
 
@@ -98,6 +98,84 @@ Navigate to the reports/ folder where your Extent Report (TestReport....html) is
 Click on the file and Download it.
 Open it in a browser.
 
+## Create Docker image
+docker build -t fhir-googlecloudapi-bdd-cucumber-framework . 
+![alt text](image-8.png)
+
+Azure
+: 
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl config current-context
+minikube
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> minikube start
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> minikube status
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl config use-context docker-desktop
+Switched to context "docker-desktop".
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl config current-context
+docker-desktop
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get nodes
+NAME             STATUS   ROLES           AGE   VERSION
+docker-desktop   Ready    control-plane   11s   v1.31.4
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl apply -f deployment-service.yml
+or kubectl apply -f deployment-service.yml --validate=false
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl apply -f deployment-service.yml --validate=false
+deployment.apps/fhir-restassured-deployment created
+service/restassured-ssvc created
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get deployments
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+fhir-restassured-deployment   0/2     2            0           46s
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get services
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+kubernetes         ClusterIP      10.96.0.1      <none>        443/TCP        96s
+restassured-ssvc   LoadBalancer   10.109.98.84   localhost     80:30645/TCP   53s
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get pods
+NAME                                           READY   STATUS             RESTARTS   AGE
+fhir-restassured-deployment-64d7fd4c44-jwkzz   0/1     ImagePullBackOff   0          58s
+fhir-restassured-deployment-64d7fd4c44-kkqcm   0/1     ErrImagePull       0          58s
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get svc restassured-ssvc
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+restassured-ssvc   LoadBalancer   10.109.98.84   localhost     80:30645/TCP   70s
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl describe deployment fhir-restassured-deployment
+Name:                   fhir-restassured-deployment
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=fhir-restassured
+Replicas:               2 desired | 2 updated | 2 total | 0 available | 2 unavailable
+Pod Template:
+  Labels:  app=fhir-restassured
+  Containers:
+   fhir-restassured:
+    Image:      containerregistrynv.azurecr.io/containerregistrynv/fhir-restassured:latest
+    Port:       8080/TCP
+    Host Port:  0/TCP
+    
+  PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> docker images
+REPOSITORY                                   TAG                                                                           IMAGE ID       CREATED          SIZE
+fhir-googlecloudapi-bdd-cucumber-framework   latest  
+
+5f77df9a546d   40 minutes ago   1.29GB
+
+AWS:
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> minikube image load fhir-googlecloudapi-bdd-cucumber-framework
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl apply -f deployment-service.yml
+deployment.apps/fhir-restassured-deployment created
+service/restassured-ssvc created
+
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get nodes
+NAME             STATUS   ROLES           AGE     VERSION
+docker-desktop   Ready    control-plane   4m14s   v1.31.4
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get deployments
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+fhir-restassured-deployment   0/2     2            0           77s
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get services
+NAME               TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes         ClusterIP      10.96.0.1        <none>        443/TCP        4m29s
+restassured-ssvc   LoadBalancer   10.107.129.191   localhost     80:30143/TCP   84s
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get pods
+NAME                                           READY   STATUS             RESTARTS   AGE
+fhir-restassured-deployment-58c7b4d545-fgx9p   0/1     ImagePullBackOff   0          91s
+fhir-restassured-deployment-58c7b4d545-jvn6t   0/1     ImagePullBackOff   0          91s
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get svc restassured-ssvc
+NAME               TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+restassured-ssvc   LoadBalancer   10.107.129.191   localhost     80:30143/TCP   2m14s
 ## Contact
 
 You can connect with me on [LinkedIn] https://www.linkedin.com/in/reka-srimurugan-040296252/

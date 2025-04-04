@@ -1,10 +1,10 @@
 package hooks;
-    import java.io.File;  
     import java.awt.Desktop;
+    import java.io.File;
     import java.io.IOException;
-    import io.cucumber.java.After;
+
     import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
+    import io.cucumber.java.Scenario;
 
     public class hook {
         //public String scenarioName;
@@ -29,10 +29,10 @@ import io.cucumber.java.Scenario;
             return scenarioName.get(); // Get the scenario name safely
         }
 
-        @After
+       // @After
         public void openHtmlReport(){
             try { 
-                File htmlReportFile = new File("target/cucumber-html-report/index.html"); // Corrected path
+                File htmlReportFile = new File("target/cucumber-html-report"); // Corrected path
                 if(htmlReportFile.exists()){
                     Desktop.getDesktop().browse(htmlReportFile.toURI());
                 } else {

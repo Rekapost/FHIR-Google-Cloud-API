@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +31,28 @@ public class CreateDataset {
         return endpoint;
     }
 
-   
+   // Check if the dataset exists and delete if needed
+   public boolean datasetExists(String datasetId) {
+    // Make a GET request to check if the dataset exists
+    Response getResponse = utilities.Perform.performSendRequest(baseuri, endpoint + "/" + datasetId, accessToken, new HashMap<>(), "", "GET");
+    return getResponse.getStatusCode() == 200;
+    }
+
+    // Delete the existing dataset
+    public void deleteDataset(String datasetId) {
+        Response deleteResponse = utilities.Perform.performSendRequest(baseuri, endpoint + "/" + datasetId, accessToken, new HashMap<>(), "", "DELETE");
+        if (deleteResponse.getStatusCode() == 200) {
+            loggerload.info("Dataset deleted successfully.");
+        } else {
+            loggerload.error("Failed to delete the existing dataset.");
+        }
+    }
+
+    // Generate unique dataset ID
+    public String generateUniqueDatasetId() {
+        return "dataset-" + UUID.randomUUID().toString();
+    }
+
     @Then("The requestBody of the dataset having {string},{string},{string},{string}.")
     public void the_request_body_of_the_dataset_having(String string, String string2, String string3, String string4) {
     // Define the payload for creating a dataset (adjust fields based on API documentation)
@@ -41,7 +63,19 @@ public class CreateDataset {
             "  \"timeZone\": \"us-central1\"\n" +
             "}";
         */
-        requestBody = "{}"; // No fields required in the request body
+
+         // Define the payload for creating a dataset with a unique ID
+         String uniqueDatasetId = generateUniqueDatasetId();
+         requestBody = "{\n" +
+                       "  \"datasetId\": \"" + uniqueDatasetId + "\",\n" +
+                       //"  \"displayName\": \"" + string2 + "\",\n" +
+                       //"  \"description\": \"" + string3 + "\",\n" +
+                       //"  \"timeZone\": \"" + string4 + "\"\n" +
+                       "}";
+        loggerload.info("Request Body: " + requestBody);
+        System.out.println("Request Body: " + requestBody);
+
+        //requestBody = "{}"; // No fields required in the request body
     }
 
     @When("A POST request is made to the API endpoint: \\/projects\\/\\{projectId}\\/locations\\/\\{location}\\/datasets.")
@@ -64,7 +98,17 @@ public class CreateDataset {
         endpoint = getEndpoint("Endpoint", 0); // Assuming row 0 for now
         System.out.println("Final API URL: " + endpoint);
         loggerload.info("Final API URL: " + endpoint);
-        response = utilities.Perform.performSendRequest(baseuri, endpoint, accessToken, new HashMap<>(), requestBody,"POST" );
+
+    /*    String datasetId = "healthcare_data";  
+        // Step 1: Check if dataset exists
+        if (datasetExists(datasetId)) {
+            loggerload.info("Dataset already exists. Deleting it.");
+            deleteDataset(datasetId); // Delete the existing dataset
+        }
+    */
+        // Step 2: Create the new dataset
+        response = utilities.Perform.performSendRequest(baseuri, endpoint, accessToken, new HashMap<>(), requestBody, "POST");
+
     }    
     
     @Then("The response body and status code are printed out for validation.")
