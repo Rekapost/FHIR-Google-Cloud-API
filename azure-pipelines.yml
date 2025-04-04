@@ -4,8 +4,12 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
 
 trigger:
-- master
+ branches:
+    include:
+      - master
 
+pool:
+  vmImage: 'ubuntu-latest'  # Specify the build agent, you can use different OS images (Ubuntu, Windows, etc.)
 
 steps:
 - task: Maven@4
@@ -18,3 +22,14 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $sourcePath = "$(Build.ArtifactStagingDirectory)"
+      $artifactName = "drop"
+      $destinationPath = "$(Pipeline.Workspace)\$artifactName"
+      Copy-Item -Path $sourcePath -Destination $destinationPath -Recurse
+      Write-Host "Artifacts copied to $destinationPath"
+
