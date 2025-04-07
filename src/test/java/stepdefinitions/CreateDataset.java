@@ -64,7 +64,7 @@ public class CreateDataset {
             "}";
         */
 
-         // Define the payload for creating a dataset with a unique ID
+        /* // Define the payload for creating a dataset with a unique ID
          String uniqueDatasetId = generateUniqueDatasetId();
          requestBody = "{\n" +
                        "  \"datasetId\": \"" + uniqueDatasetId + "\",\n" +
@@ -74,8 +74,10 @@ public class CreateDataset {
                        "}";
         loggerload.info("Request Body: " + requestBody);
         System.out.println("Request Body: " + requestBody);
-
-        //requestBody = "{}"; // No fields required in the request body
+        */
+        requestBody = "{}"; // No fields required in the request body
+        loggerload.info("Request Body: " + requestBody);
+        System.out.println("Request Body: " + requestBody);
     }
 
     @When("A POST request is made to the API endpoint: \\/projects\\/\\{projectId}\\/locations\\/\\{location}\\/datasets.")
