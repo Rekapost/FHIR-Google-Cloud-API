@@ -1,12 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment # Kubernetes resource kind we are creating
+kind: Deployment
 metadata:
   name: fhir-restassured-deployment
 spec:
   selector:
     matchLabels:
       app: fhir-restassured
-  replicas: 2 # Number of replicas that will be created for this deployment
+  replicas: 2
   template:
     metadata:
       labels:
@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: fhir-restassured
-          image: fhir-googlecloudapi-bdd-cucumber-framework # Image that will be used to containers in the cluster
-          imagePullPolicy: Always
+          image: reka83/fhir-googlecloudapi-bdd-cucumber-framework:latest
+          command: ["sleep", "infinity"]
           resources:
             limits:
               memory: "512Mi"
@@ -24,14 +24,13 @@ spec:
               memory: "256Mi"
               cpu: "250m"
           ports:
-            - containerPort: 8080 # The port that the container is running on in the cluster
-
+            - containerPort: 8081
 
 ---
 
-apiVersion: v1 # Kubernetes API version
-kind: Service # Kubernetes resource kind we are creating
-metadata: # Metadata of the resource kind we are creating
+apiVersion: v1
+kind: Service
+metadata:
   name: restassured-ssvc
 spec:
   selector:
@@ -39,5 +38,7 @@ spec:
   ports:
     - protocol: "TCP"
       port: 80
-      targetPort: 8080 
-  type: LoadBalancer # type of the service.
+      targetPort: 8081
+      nodePort: 30080
+  type: NodePort
+  #type: LoadBalancer  # Make sure your environment supports LoadBalancer services

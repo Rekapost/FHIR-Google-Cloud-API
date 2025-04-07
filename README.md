@@ -101,6 +101,17 @@ Open it in a browser.
 docker build -t fhir-googlecloudapi-bdd-cucumber-framework . 
 ![alt text](fhirImages/image-8.png)
 
+```
+docker tag fhir-googlecloudapi-bdd-cucumber-framework:latest reka83/fhir-googlecloudapi-bdd-cucumber-framework:latest
+docker push reka83/fhir-googlecloudapi-bdd-cucumber-framework:latest
+```
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```docker images```
+REPOSITORY                                          TAG                 IMAGE ID       CREATED         SIZE
+fhir-googlecloudapi-bdd-cucumber-framework          latest               5f77df9a546d   30 hours ago    1.29GB
+reka83/fhir-googlecloudapi-bdd-cucumber-framework   latest               5f77df9a546d   30 hours ago    1.29GB
+
+//PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```minikube image load reka83/fhir-googlecloudapi-bdd-cucumber-framework:latest```
+
 ## Azure:
 
 ![alt text](fhirImages/image-9.png)
@@ -116,35 +127,48 @@ It will Show like this , if u run pipeline when u have paid and got the subscrip
 ![alt text](fhirImages/image-13.png)
 
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl config current-context```
+docker-desktop
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl config use-context minikube```
+Switched to context "minikube".
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl config current-context```
 minikube
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API>``` minikube start```
+or ```minikube start --driver=virtualbox```
+
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```minikube status```
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl config use-context docker-desktop```
-Switched to context "docker-desktop".
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API>``` kubectl config current-context```
-docker-desktop
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get nodes```
-NAME             STATUS   ROLES           AGE   VERSION
-docker-desktop   Ready    control-plane   11s   v1.31.4
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   2m19s   v1.31.0
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl apply -f deployment-service.yml```
 or kubectl apply -f deployment-service.yml --validate=false
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl apply -f deployment-service.yml --validate=false```
 deployment.apps/fhir-restassured-deployment created
 service/restassured-ssvc created
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get deployments```
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> Kubectl get deployment
 NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
-fhir-restassured-deployment   0/2     2            0           46s
+fhir-restassured-deployment   2/2     2            2           6m32s
+```
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get services```
 NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 kubernetes         ClusterIP      10.96.0.1      <none>        443/TCP        96s
 restassured-ssvc   LoadBalancer   10.109.98.84   localhost     80:30645/TCP   53s
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get pods```
-NAME                                           READY   STATUS             RESTARTS   AGE
-fhir-restassured-deployment-64d7fd4c44-jwkzz   0/1     ImagePullBackOff   0          58s
-fhir-restassured-deployment-64d7fd4c44-kkqcm   0/1     ErrImagePull       0          58s
+
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> Kubectl get pods    
+NAME                                           READY   STATUS    RESTARTS   AGE
+fhir-restassured-deployment-6d886d9b49-69b64   1/1     Running   0          4m44s
+fhir-restassured-deployment-6d886d9b49-qdnql   1/1     Running   0          4m41s
+
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get svc restassured-ssvc```
 NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
 restassured-ssvc   LoadBalancer   10.109.98.84   localhost     80:30645/TCP   70s
+```
 PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl describe deployment fhir-restassured-deployment```
 Name:                   fhir-restassured-deployment
 Annotations:            deployment.kubernetes.io/revision: 1
@@ -158,33 +182,39 @@ Pod Template:
     Port:       8080/TCP
     Host Port:  0/TCP
     
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```docker images```
-REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
-fhir-googlecloudapi-bdd-cucumber-framework   latest  5f77df9a546d   40 minutes ago   1.29GB
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> minikube ip
+192.168.49.2
 
-## AWS
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```minikube image load fhir-googlecloudapi-bdd-cucumber-framework```
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl apply -f deployment-service.yml```
-deployment.apps/fhir-restassured-deployment created
-service/restassured-ssvc created
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get nodes -o wide
+NAME       STATUS   ROLES           AGE   VERSION   INTERNAL-IP    EXTERNAL-IP   OS-IMAGE             KERNEL-VERSION                       CONTAINER-RUNTIME
+minikube   Ready    control-plane   14m   v1.31.0   192.168.49.2   <none>        Ubuntu 22.04.4 LTS   5.15.167.4-microsoft-standard-WSL2   docker://27.2.0   
 
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get nodes```
-NAME             STATUS   ROLES           AGE     VERSION
-docker-desktop   Ready    control-plane   4m14s   v1.31.4
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get deployments```
-NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
-fhir-restassured-deployment   0/2     2            0           77s
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API>```kubectl get services```
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> minikube service restassured-ssvc --url
+http://127.0.0.1:62866
+### Since Minikube doesn't support LoadBalancer services out-of-the-box,
+Start Minikube Tunnel: Run minikube tunnel in another terminal window. This command will expose your LoadBalancer services locally.
+
+```minikube tunnel```
+C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API>  minikube tunnel
+✅  Tunnel successfully started
+
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API>   kubectl get svc restassured-ssvc
+NAME               TYPE           CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+restassured-ssvc   LoadBalancer   10.98.86.153   127.0.0.1     80:30809/TCP   9m43s
+
+
+After this, your LoadBalancer service will be accessible via an external IP on your local machine.
+Use Port Forwarding: If you don't want to use minikube tunnel, you can use port forwarding to expose the service.
+
+```kubectl port-forward service/restassured-ssvc 8080:80``
+This will forward port 8080 on your local machine to port 80 on the service inside your Kubernetes cluster.
+
+```
+PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> kubectl get svc restassured-ssvc
 NAME               TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-kubernetes         ClusterIP      10.96.0.1        <none>        443/TCP        4m29s
-restassured-ssvc   LoadBalancer   10.107.129.191   localhost     80:30143/TCP   84s
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get pods```
-NAME                                           READY   STATUS             RESTARTS   AGE
-fhir-restassured-deployment-58c7b4d545-fgx9p   0/1     ImagePullBackOff   0          91s
-fhir-restassured-deployment-58c7b4d545-jvn6t   0/1     ImagePullBackOff   0          91s
-PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```kubectl get svc restassured-ssvc```
-NAME               TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-restassured-ssvc   LoadBalancer   10.107.129.191   localhost     80:30143/TCP   2m14s
+restassured-ssvc   LoadBalancer   10.111.245.128   127.0.0.1     80:31081/TCP   6h1m
+```
+http://127.0.0.1:3658/
 
 ## Contact
 You can connect with me on [LinkedIn] https://www.linkedin.com/in/reka-srimurugan-040296252/
