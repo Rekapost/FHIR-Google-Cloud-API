@@ -1,3 +1,46 @@
+# FHIR Google Cloud API
+
+## Project Overview
+
+**FHIR Google Cloud API** is a framework that integrates the **FHIR (Fast Healthcare Interoperability Resources)** standard with **Google Cloud** services. The project aims to provide a seamless connection between healthcare applications using FHIR and Google's powerful cloud infrastructure, such as Google Cloud Healthcare APIs.
+
+This project includes functionalities for performing basic FHIR CRUD operations, interfacing with Google Cloud Healthcare APIs, and testing API endpoints using automated tools like **Cucumber** and **RestAssured**.
+
+## Features
+
+- **FHIR API Integration**: Simplified integration with the FHIR standard for healthcare data management.
+- **Google Cloud Healthcare API**: Interface with Google Cloud’s healthcare services, including cloud-based storage and processing.
+- **Automated Testing**: Use of **RestAssured** and **Cucumber** to automate the testing of the FHIR-based API endpoints.
+- **Deployment**: Easy deployment options for Kubernetes using **Docker** and **Helm** charts.
+- **Health Check Integration**: Implemented health checks for API readiness and liveness to ensure system reliability.
+
+## Technologies Used
+
+- **FHIR**: Fast Healthcare Interoperability Resources, a standard for electronic healthcare data exchange.
+- **Google Cloud Healthcare API**: Cloud-based services for healthcare data management, including storing and processing FHIR data.
+- **Cucumber**: A tool for Behavior-Driven Development (BDD) used for testing the API.
+- **RestAssured**: A Java library used for testing RESTful APIs, integrated into the BDD tests.
+- **Kubernetes**: Container orchestration to deploy and manage applications on Google Cloud.
+- **Docker**: Used to containerize the application and ensure portability.
+- **Maven**: For project build and dependency management.
+
+## Installation
+
+### Prerequisites
+
+- **Docker**: Ensure Docker is installed to build and run the application in containers.
+- **Kubernetes (Minikube or GKE)**: A Kubernetes cluster must be set up for deployment.
+- **Google Cloud SDK**: Make sure you have the Google Cloud SDK for authentication and interaction with Google Cloud services.
+- **Maven**: To manage dependencies and build the project.
+- **Java**: Make sure Java 11+ is installed to build the project.
+
+### Steps to Set Up Locally
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Rekapost/FHIR-Google-Cloud-API.git
+   cd FHIR-Google-Cloud-API
+
 # Creating and managing FHIR stores ***
 
 ## FHIR versions DSTU2, STU3, and R4. 
