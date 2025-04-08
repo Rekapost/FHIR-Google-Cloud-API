@@ -12,9 +12,12 @@ import io.cucumber.testng.CucumberOptions;
                 "src/test/resources/features/04_GetAllFHIRStores.feature"
             },
     glue = {"stepdefinitions","hooks"},
-    plugin = {"pretty", 
+    plugin = {
               "html:target/cucumber-html-report",   // Generates HTML report
-              "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+              "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+              "pretty", // Standard output of the tests
+              "html:target/cucumber-reports.html", // HTML report for viewing
+              "json:target/cucumber-reports.json"  // JSON report for further analysis
             },
     monochrome = true,
     dryRun = false                         // Skip execution of glue code

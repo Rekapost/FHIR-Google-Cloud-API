@@ -32,7 +32,7 @@ package hooks;
        // @After
         public void openHtmlReport(){
             try { 
-                File htmlReportFile = new File("target/cucumber-html-report"); // Corrected path
+                File htmlReportFile = new File("target/cucumber-html-report.html"); // Corrected path
                 if(htmlReportFile.exists()){
                     Desktop.getDesktop().browse(htmlReportFile.toURI());
                 } else {

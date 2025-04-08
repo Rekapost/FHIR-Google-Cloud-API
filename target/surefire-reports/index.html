@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Healthcare_API_Test_Suite" class="navigator-link">
-              <span class="suite-name border-failed">Healthcare API Test Suite</span>
+              <span class="suite-name border-passed">Healthcare API Test Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Healthcare_API_Test_Suite" class="hide-methods failed suite-Healthcare_API_Test_Suite"> (hide)</a> <!-- hide-methods failed suite-Healthcare_API_Test_Suite -->
-                      <a href="#" panel-name="suite-Healthcare_API_Test_Suite" class="show-methods failed suite-Healthcare_API_Test_Suite"> (show)</a> <!-- show-methods failed suite-Healthcare_API_Test_Suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Healthcare_API_Test_Suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Healthcare_API_Test_Suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Create a FHIR Store&quot;, &quot;Create a FHIR Store&quot;)">runScenario("Create a FHIR Store", "Create a FHIR Store")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Healthcare_API_Test_Suite -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -117,17 +103,22 @@
                     <div class="method-list-content passed suite-Healthcare_API_Test_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Healthcare_API_Test_Suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Create a new FHIR dataset&quot;, &quot;Create DataSet&quot;)">runScenario("Create a new FHIR dataset", "Create DataSet")</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Healthcare_API_Test_Suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Update dataset timezone&quot;, &quot;Update TimeZone&quot;)">runScenario("Update dataset timezone", "Update TimeZone")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Healthcare_API_Test_Suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Get all FHIR Stores&quot;, &quot;Get all FHIR Stores&quot;)">runScenario("Get all FHIR Stores", "Get all FHIR Stores")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Healthcare_API_Test_Suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Create a FHIR Store&quot;, &quot;Create a FHIR Store&quot;)">runScenario("Create a FHIR Store", "Create a FHIR Store")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Healthcare_API_Test_Suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Create a new FHIR dataset&quot;, &quot;Create DataSet&quot;)">runScenario("Create a new FHIR dataset", "Create DataSet")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Healthcare_API_Test_Suite -->
@@ -142,49 +133,12 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Healthcare_API_Test_Suite" class="panel Healthcare_API_Test_Suite">
-          <div class="suite-Healthcare_API_Test_Suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testRunner.TestRunner</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Create a FHIR Store&quot;, &quot;Create a FHIR Store&quot;)">
-                  </a> <!-- runScenario("Create a FHIR Store", "Create a FHIR Store") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Create a FHIR Store","Create a FHIR Store")</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected:&lt;200&gt; but was:&lt;401&gt;
-	at org.junit.Assert.fail(Assert.java:89)
-	at org.junit.Assert.failNotEquals(Assert.java:835)
-	at org.junit.Assert.assertEquals(Assert.java:647)
-	at org.junit.Assert.assertEquals(Assert.java:633)
-	at stepdefinitions.CreateFHIRStore.validateResponse(CreateFHIRStore.java:68)
-	at ✽.The response body and status code are printed out for validation to create store.(file:///C:/Users/nreka/vscodedevops/FHIR-Google-Cloud-API/src/test/resources/features/03_CreateFHIRStore.feature:12)
-
-</div> <!-- stack-trace -->
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Healthcare_API_Test_Suite-class-failed -->
           <div class="suite-Healthcare_API_Test_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">testRunner.TestRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="runScenario(&quot;Create a new FHIR dataset&quot;, &quot;Create DataSet&quot;)">
-                  </a> <!-- runScenario("Create a new FHIR dataset", "Create DataSet") -->
-                  <span class="method-name">runScenario</span>
-                  <span class="parameters">("Create a new FHIR dataset","Create DataSet")</span>
-                  <em>
-(Runs Cucumber Scenarios)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="runScenario(&quot;Update dataset timezone&quot;, &quot;Update TimeZone&quot;)">
@@ -201,6 +155,26 @@
                   </a> <!-- runScenario("Get all FHIR Stores", "Get all FHIR Stores") -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("Get all FHIR Stores","Get all FHIR Stores")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Create a FHIR Store&quot;, &quot;Create a FHIR Store&quot;)">
+                  </a> <!-- runScenario("Create a FHIR Store", "Create a FHIR Store") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Create a FHIR Store","Create a FHIR Store")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Create a new FHIR dataset&quot;, &quot;Create DataSet&quot;)">
+                  </a> <!-- runScenario("Create a new FHIR dataset", "Create DataSet") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Create a new FHIR dataset","Create DataSet")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -274,24 +248,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'testRunner.TestRunner')
-data.setCell(0, 3, 4172);
+data.setCell(0, 3, 8222);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'testRunner.TestRunner')
-data.setCell(1, 3, 477);
+data.setCell(1, 3, 392);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'testRunner.TestRunner')
-data.setCell(2, 3, 400);
+data.setCell(2, 3, 308);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
 data.setCell(3, 2, 'testRunner.TestRunner')
-data.setCell(3, 3, 381);
+data.setCell(3, 3, 307);
 window.suiteTableData['Healthcare_API_Test_Suite']= { tableData: data, tableDiv: 'times-div-Healthcare_API_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Healthcare_API_Test_Suite">
               </div> <!-- times-div-Healthcare_API_Test_Suite -->
             </div> <!-- times-div -->
@@ -319,30 +293,28 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">testRunner.TestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@df5f5c0)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@4201a617)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Create a new FHIR dataset", "Create DataSet")</span>
-                <span class="method-start">793 ms</span>
+                <span class="method-start">775 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Update dataset timezone", "Update TimeZone")</span>
-                <span class="method-start">5017 ms</span>
+                <span class="method-start">9036 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">runScenario("Create a FHIR Store", "Create a FHIR Store")</span>
-                <span class="method-start">5403 ms</span>
+                <span class="method-start">9431 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Get all FHIR Stores", "Get all FHIR Stores")</span>
-                <span class="method-start">5886 ms</span>
+                <span class="method-start">9740 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">6295 ms</span>
+                <span class="method-start">10055 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

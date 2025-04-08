@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fhir-restassured-bdd-deployment
+spec:
+  selector:
+    matchLabels:
+      app: fhir-restassured-bdd
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: fhir-restassured-bdd
+    spec:
+      containers:
+        - name: fhir-restassured-bdd
+          image: reka83/fhir-googlecloudapi-bdd-cucumber-framework:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          
+       

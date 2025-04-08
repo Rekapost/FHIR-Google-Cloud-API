@@ -1,12 +1,12 @@
 package stepdefinitions;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import testData.TestData;
-import utilities.JsonUtils;
 import java.io.IOException;
 import java.util.Map;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import testData.TestData;
 
 public class CommonStepDefinition{
@@ -38,7 +38,7 @@ public class CommonStepDefinition{
         @Then("You need an OAuth2 token \\(accessToken) to authenticate the request.")
         public void you_need_an_o_auth2_token_access_token_to_authenticate_the_request() {
                 accessToken = TestData.accessToken;
-                loggerload.info("Access token: " + TestData.accessToken); 
+               // loggerload.info("Access token: " + TestData.accessToken); 
         }
 
 }

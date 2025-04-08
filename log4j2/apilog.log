@@ -1,78 +1,42 @@
-[INFO ] 2025-04-07 13:45:45.332 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
-[INFO ] 2025-04-07 13:45:45.529 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
-[INFO ] 2025-04-07 13:45:45.531 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: 58XARFcz62cz7q7gNAiVhZ9iqrUcLrlRx4DUD81nRH6tHxgS3_QnQ2yAaCgYKAQ8SARASFQHGX2Mit7KNaBw7ZFgiGSDK2olTaA0177
-[INFO ] 2025-04-07 13:45:45.533 [TestNG-test-Healthcare API Tests-1] CreateDataset - Request Body: {
-  "datasetId": "dataset-d5111ada-2208-4ea7-bc47-5c4640d19b45",
+[INFO ] 2025-04-08 10:34:15.926 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-08 10:34:16.142 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-08 10:34:16.148 [TestNG-test-Healthcare API Tests-1] CreateDataset - Request Body: {}
+[INFO ] 2025-04-08 10:34:16.151 [TestNG-test-Healthcare API Tests-1] CreateDataset - Make POST request to create dataset 
+[INFO ] 2025-04-08 10:34:16.938 [TestNG-test-Healthcare API Tests-1] CreateDataset - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
+[INFO ] 2025-04-08 10:34:16.940 [TestNG-test-Healthcare API Tests-1] CreateDataset - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
+[INFO ] 2025-04-08 10:34:23.344 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-08 10:34:23.345 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-08 10:34:23.350 [TestNG-test-Healthcare API Tests-1] Patch - Executing PATCH request for dataset timezone update...
+[INFO ] 2025-04-08 10:34:23.393 [TestNG-test-Healthcare API Tests-1] Patch - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
+[INFO ] 2025-04-08 10:34:23.393 [TestNG-test-Healthcare API Tests-1] Patch - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
+[INFO ] 2025-04-08 10:34:23.707 [TestNG-test-Healthcare API Tests-1] Patch - Status Code: 200
+[INFO ] 2025-04-08 10:34:23.707 [TestNG-test-Healthcare API Tests-1] Patch - Dataset timezone updated successfully.
+[INFO ] 2025-04-08 10:34:23.710 [TestNG-test-Healthcare API Tests-1] Patch - Response Body: {
+    "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data",
+    "timeZone": "UTC",
+    "satisfiesPzi": true
 }
-[INFO ] 2025-04-07 13:45:45.534 [TestNG-test-Healthcare API Tests-1] CreateDataset - Make POST request to create dataset 
-[INFO ] 2025-04-07 13:45:46.317 [TestNG-test-Healthcare API Tests-1] CreateDataset - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
-[INFO ] 2025-04-07 13:45:46.320 [TestNG-test-Healthcare API Tests-1] CreateDataset - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets?datasetId=healthcare_data
-[INFO ] 2025-04-07 13:45:48.841 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
-[INFO ] 2025-04-07 13:45:48.851 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
-[INFO ] 2025-04-07 13:45:48.852 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: 58XARFcz62cz7q7gNAiVhZ9iqrUcLrlRx4DUD81nRH6tHxgS3_QnQ2yAaCgYKAQ8SARASFQHGX2Mit7KNaBw7ZFgiGSDK2olTaA0177
-[INFO ] 2025-04-07 13:45:48.854 [TestNG-test-Healthcare API Tests-1] Patch - Executing PATCH request for dataset timezone update...
-[INFO ] 2025-04-07 13:45:48.941 [TestNG-test-Healthcare API Tests-1] Patch - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
-[INFO ] 2025-04-07 13:45:48.942 [TestNG-test-Healthcare API Tests-1] Patch - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data?updateMask=timeZone
-[INFO ] 2025-04-07 13:45:49.198 [TestNG-test-Healthcare API Tests-1] Patch - Status Code: 401
-[ERROR] 2025-04-07 13:45:49.199 [TestNG-test-Healthcare API Tests-1] Patch - Error updating dataset: {
-    "error": {
-        "code": 401,
-        "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
-        "status": "UNAUTHENTICATED",
-        "details": [
-            {
-                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-                "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED",
-                "metadata": {
-                    "method": "google.cloud.healthcare.v1.dataset.DatasetService.UpdateDataset",
-                    "service": "healthcare.googleapis.com"
-                }
-            }
-        ]
-    }
+[INFO ] 2025-04-08 10:34:23.732 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-08 10:34:23.733 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-08 10:34:23.779 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
+[INFO ] 2025-04-08 10:34:23.781 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
+[INFO ] 2025-04-08 10:34:24.015 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Status Code: 200
+[INFO ] 2025-04-08 10:34:24.016 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Body: {
+    "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Dar_83",
+    "version": "R4",
+    "complexDataTypeReferenceParsing": "ENABLED"
 }
-[INFO ] 2025-04-07 13:45:49.201 [TestNG-test-Healthcare API Tests-1] Patch - Response Body: {
-    "error": {
-        "code": 401,
-        "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
-        "status": "UNAUTHENTICATED",
-        "details": [
-            {
-                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-                "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED",
-                "metadata": {
-                    "method": "google.cloud.healthcare.v1.dataset.DatasetService.UpdateDataset",
-                    "service": "healthcare.googleapis.com"
-                }
-            }
-        ]
-    }
+[INFO ] 2025-04-08 10:34:24.035 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
+[INFO ] 2025-04-08 10:34:24.036 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
+[INFO ] 2025-04-08 10:34:24.084 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
+[INFO ] 2025-04-08 10:34:24.085 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
+[INFO ] 2025-04-08 10:34:24.328 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - All Stores are listed successfully.
+[INFO ] 2025-04-08 10:34:24.328 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Response Body: {
+    "fhirStores": [
+        {
+            "name": "projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores/Dar_83",
+            "version": "R4",
+            "complexDataTypeReferenceParsing": "ENABLED"
+        }
+    ]
 }
-[INFO ] 2025-04-07 13:45:49.225 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
-[INFO ] 2025-04-07 13:45:49.226 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
-[INFO ] 2025-04-07 13:45:49.227 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: 58XARFcz62cz7q7gNAiVhZ9iqrUcLrlRx4DUD81nRH6tHxgS3_QnQ2yAaCgYKAQ8SARASFQHGX2Mit7KNaBw7ZFgiGSDK2olTaA0177
-[INFO ] 2025-04-07 13:45:49.293 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
-[INFO ] 2025-04-07 13:45:49.294 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores?fhirStoreId=Dar_83
-[INFO ] 2025-04-07 13:45:49.676 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Status Code: 401
-[INFO ] 2025-04-07 13:45:49.677 [TestNG-test-Healthcare API Tests-1] CreateFHIRStore - Response Body: {
-    "error": {
-        "code": 401,
-        "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
-        "status": "UNAUTHENTICATED",
-        "details": [
-            {
-                "@type": "type.googleapis.com/google.rpc.ErrorInfo",
-                "reason": "ACCESS_TOKEN_TYPE_UNSUPPORTED",
-                "metadata": {
-                    "service": "healthcare.googleapis.com",
-                    "method": "google.cloud.healthcare.v1.fhir.FhirStoreService.CreateFhirStore"
-                }
-            }
-        ]
-    }
-}
-[INFO ] 2025-04-07 13:45:49.703 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Environment: qa
-[INFO ] 2025-04-07 13:45:49.703 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - BaseURI: https://healthcare.googleapis.com/v1
-[INFO ] 2025-04-07 13:45:49.704 [TestNG-test-Healthcare API Tests-1] CommonStepDefinition - Access token: 58XARFcz62cz7q7gNAiVhZ9iqrUcLrlRx4DUD81nRH6tHxgS3_QnQ2yAaCgYKAQ8SARASFQHGX2Mit7KNaBw7ZFgiGSDK2olTaA0177
-[INFO ] 2025-04-07 13:45:49.758 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Endpoint/projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
-[INFO ] 2025-04-07 13:45:49.759 [TestNG-test-Healthcare API Tests-1] GetAllFHIRStores - Final API URL: /projects/healthcare-system-api/locations/us-central1/datasets/healthcare_data/fhirStores
