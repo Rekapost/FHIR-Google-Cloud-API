@@ -167,7 +167,22 @@ Navigate to the reports/ folder where your Extent Report (TestReport....html) is
 Click on the file and Download it.
 Open it in a browser.
 
-## Running Maven Project Through Azure Pipeline
+## Azure:
+![alt text](fhirImages/image-9.png)
+
+### [error]No hosted parallelism has been purchased or granted. To request a free parallelism grant, please fill out the following form https://aka.ms/azpipelines-parallelism-request
+
+**U have to get Subscription and then only u can run pipeline in azure**
+![alt text](fhirImages/image-10.png)
+
+- It will Show like this , if u run pipeline when u have paid and got the subscription
+
+![alt text](fhirImages/image-11.png)
+![alt text](fhirImages/image-14.png)
+![alt text](fhirImages/image-12.png)
+![alt text](fhirImages/image-13.png)
+
+### Running Maven Project Through Azure Pipeline after getting subscription 
 ![alt text](image.png)
 ![alt text](<Screenshot 2025-04-09 164954.png>)
 ![alt text](image-1.png)
@@ -196,22 +211,6 @@ reka83/fhir-googlecloudapi-bdd-cucumber-framework   latest               5f77df9
 //PS C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API> ```minikube image load reka83/fhir-googlecloudapi-bdd-cucumber-framework:latest```
 //docker tag fhir-googlecloudapi-bdd-cucumber-framework:latest reka83/fhir-googlecloudapi-bdd-cucumber-framework:latest
 ```
-
-## Azure:
-
-![alt text](fhirImages/image-9.png)
-
-## [error]No hosted parallelism has been purchased or granted. To request a free parallelism grant, please fill out the following form https://aka.ms/azpipelines-parallelism-request
-
-**U have to get Subscription and then only u can run pipeline in azure**
-![alt text](fhirImages/image-10.png)
-
-- It will Show like this , if u run pipeline when u have paid and got the subscription
-
-![alt text](fhirImages/image-11.png)
-![alt text](fhirImages/image-14.png)
-![alt text](fhirImages/image-12.png)
-![alt text](fhirImages/image-13.png)
 
 ## deployment.yaml
 ### Deploying the project in K8s cluster
