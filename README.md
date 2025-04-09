@@ -169,6 +169,7 @@ Open it in a browser.
 
 ## Running Maven Project Through Azure Pipeline
 ![alt text](image.png)
+![alt text](<Screenshot 2025-04-09 164954.png>)
 ![alt text](image-1.png)
 
 ## Create Docker image
@@ -212,7 +213,8 @@ reka83/fhir-googlecloudapi-bdd-cucumber-framework   latest               5f77df9
 ![alt text](fhirImages/image-12.png)
 ![alt text](fhirImages/image-13.png)
 
-## deploymen-service.yml
+## deployment.yaml
+### Deploying the project in K8s cluster
 ```
 C:\Users\nreka\vscodedevops\FHIR-Google-Cloud-API>kubectl version --client
 ```
